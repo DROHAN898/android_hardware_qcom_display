@@ -52,6 +52,7 @@ LOCAL_SRC_FILES               := hwc.cpp          \
                                  hwc_virtual.cpp
 
 TARGET_MIGRATE_QDCM_LIST := msm8909
+TARGET_MIGRATE_QDCM_LIST += msm8916
 TARGET_MIGRATE_QDCM := $(call is-board-platform-in-list,$(TARGET_MIGRATE_QDCM_LIST))
 
 ifeq ($(TARGET_MIGRATE_QDCM), true)
