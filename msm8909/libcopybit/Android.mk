@@ -29,7 +29,6 @@ LOCAL_C_INCLUDES              := $(common_includes) $(kernel_includes)
 LOCAL_SHARED_LIBRARIES        := $(common_libs) libdl libmemalloc
 LOCAL_CFLAGS                  := $(common_flags) -DLOG_TAG=\"qdcopybit\"
 LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
-LOCAL_CLANG                   := $(common_clang_flags)
 
 ifeq ($(TARGET_USES_C2D_COMPOSITION),true)
     LOCAL_CFLAGS += -DCOPYBIT_Z180=1 -DC2D_SUPPORT_DISPLAY=1
@@ -42,7 +41,7 @@ else
             LOCAL_SRC_FILES := software_converter.cpp copybit.cpp
             include $(BUILD_SHARED_LIBRARY)
         endif
-        ifeq ($(call is-board-platform-in-list, msm8916 msm8610 msm8909),true)
+        ifeq ($(call is-board-platform-in-list, msm8610 msm8909),true)
             LOCAL_SRC_FILES := software_converter.cpp copybit.cpp
             include $(BUILD_SHARED_LIBRARY)
         endif

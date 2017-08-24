@@ -24,8 +24,6 @@ LOCAL_SHARED_LIBRARIES        := $(common_libs) libEGL liboverlay \
 LOCAL_CFLAGS                  := $(common_flags) -DLOG_TAG=\"qdhwcomposer\" -Wno-absolute-value \
                                  -Wno-float-conversion
 
-LOCAL_CLANG                   := true
-
 ifeq ($(TARGET_USES_QCOM_BSP),true)
 LOCAL_SHARED_LIBRARIES += libskia
 ifeq ($(GET_FRAMEBUFFER_FORMAT_FROM_HWC),true)
@@ -52,7 +50,6 @@ LOCAL_SRC_FILES               := hwc.cpp          \
                                  hwc_virtual.cpp
 
 TARGET_MIGRATE_QDCM_LIST := msm8909
-TARGET_MIGRATE_QDCM_LIST += msm8916
 TARGET_MIGRATE_QDCM := $(call is-board-platform-in-list,$(TARGET_MIGRATE_QDCM_LIST))
 
 ifeq ($(TARGET_MIGRATE_QDCM), true)
