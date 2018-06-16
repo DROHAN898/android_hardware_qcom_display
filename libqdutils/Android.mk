@@ -8,6 +8,7 @@ LOCAL_MODULE_TAGS             := optional
 LOCAL_SHARED_LIBRARIES        := $(common_libs) libui libbinder libqservice
 LOCAL_C_INCLUDES              := $(common_includes) $(kernel_includes)
 LOCAL_CFLAGS                  := $(common_flags) -DLOG_TAG=\"qdutils\" -Wno-float-conversion
+LOCAL_CFLAGS                  := -Wno-error
 LOCAL_ADDITIONAL_DEPENDENCIES := $(common_deps)
 LOCAL_COPY_HEADERS_TO         := $(common_header_export_path)
 LOCAL_COPY_HEADERS            := mdp_version.h
@@ -27,6 +28,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES   := $(common_deps)
 LOCAL_SRC_FILES                 := display_config.cpp
 LOCAL_CFLAGS                    := $(common_flags)
 LOCAL_CFLAGS                    += -DLOG_TAG=\"DisplayConfig\"
+LOCAL_CFLAGS                    := -Wno-error
 LOCAL_MODULE_TAGS               := optional
 LOCAL_MODULE                    := libdisplayconfig
 include $(BUILD_SHARED_LIBRARY)
@@ -41,6 +43,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES   := $(common_deps)
 LOCAL_SRC_FILES                 := qdMetaData.cpp qd_utils.cpp
 LOCAL_CFLAGS                    := $(common_flags)
 LOCAL_CFLAGS                    += -DLOG_TAG=\"DisplayMetaData\"
+LOCAL_CFLAGS                    := -Wno-error
 LOCAL_MODULE_TAGS               := optional
 LOCAL_MODULE                    := libqdMetaData
 LOCAL_VENDOR_MODULE             := true
@@ -55,7 +58,7 @@ LOCAL_ADDITIONAL_DEPENDENCIES   := $(common_deps)
 LOCAL_SRC_FILES                 := qdMetaData.cpp qd_utils.cpp
 LOCAL_CFLAGS                    := $(common_flags) -Wno-sign-conversion
 LOCAL_CFLAGS                    += -DLOG_TAG=\"DisplayMetaData\"
-
+LOCAL_CFLAGS                    := -Wno-error
 LOCAL_MODULE_TAGS               := optional
 LOCAL_MODULE                    := libqdMetaData.system
 
